@@ -6,7 +6,7 @@ before_action: authenticate_user!, only: [:new, :create]
 	end
 
 	def create
-		safe_topic = params.require(:topic).permit(:question, :description, :timestamp, :timeframe, :groupsize, :image)
+		safe_topic = params.require(:topic).permit(:question, :description, :starttime, :timeframe, :groupsize, :image)
 		@topic = Topic.new(safe_topic)
 		@topic.user = current_user
 

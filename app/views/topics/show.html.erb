@@ -2,7 +2,7 @@
 	<li><a href="<%= topics_path %>">All</a><span class="divider">/</span></li>
 </u1>
 
-<h1><%= @topic.title %> - Starts at <%= @topic.timestamp %></h1>
+<h1><%= @topic.title %> - Starts at <%= @topic.starttime %></h1>
 
 <br/>
 <%= mail_to @topic.user.email, "Contact Facilitator", subject: "Junto - #{@topic.question}", class: "btn btn-primary" %></h4>

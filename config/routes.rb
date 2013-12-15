@@ -1,6 +1,11 @@
 Junto::Application.routes.draw do
 
+  devise_for :users
+  # get "topics/show"
+  # root "welcome#index"
+
   resources :topics
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
