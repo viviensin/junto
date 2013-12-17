@@ -1,0 +1,35 @@
+<h1> New Discussion Topic </h1>
+
+<br/>
+
+<% if @topic.errors.any? %>
+	<h2> There were errors saving your discussion topic</h2>
+	<ul>
+		<% @topic.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+		<% end %>
+	</ul>
+<% end %>
+
+<%= form_for @topic do |f| %>
+	<fieldset>
+		<%= f.label :question, "Discussion topic (we recommend that you put it in the form of a question)" %>
+		<%= f.text_area :question, required: true %>
+		<%= f.label :description, "Description" %>
+		<%= f.text_area :description, required: true %>
+		<%= f.label :starttime, "Start time" %>
+		<%= f.datetime_select :starttime, required: true %>
+		<%= f.label :length, "Length of discussion (in minutes)" %>
+		<%= f.text_field :length, required: true %>
+		<%= f.label :groupsize, "Group size (you can give permission to users who were waitlisted an hour before the discussion)" %>
+		<%= f.text_field :groupsize, required: true %> 
+
+		</fieldset> 
+		<br/><br/>
+
+		<%= f.submit class: "btn btn-succes btn-medium" %>
+		<%= link_to "Cancel", topics_path, class: "btn btn-danger btn-medium" %>
+		<% end %>
+
+ 
+		

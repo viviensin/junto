@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  question: MyText
+  description: MyText
+  groupsize: 1
+  starttime: 2013-12-14 16:37:53
+  length: 2013-12-14 16:37:53
+  picture: MyString
+  groupsize: 1
+
+two:
+  question: MyText
+  description: MyText
+  groupsize: 1
+  starttime: 2013-12-14 16:37:53
+  length: 2013-12-14 16:37:53
+  picture: MyString
+  groupsize: 1
