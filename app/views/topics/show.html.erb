@@ -2,7 +2,7 @@
 	<li><a href="<%= topics_path %>">All</a><span class="divider">/</span></li>
 </u1>
 
-<h1><%= @topic.title %> - Starts at <%= @topic.starttime %></h1>
+<h1><%= @topic.question %> - Starts at <%= @topic.starttime %></h1>
 
 <br/>
 <%= mail_to @topic.user.email, "Contact Facilitator", subject: "Junto - #{@topic.question}", class: "btn btn-primary" %></h4>
@@ -18,7 +18,7 @@
 <h4>Length of discussion:</h4>
 <section class="well well-small">
 	<div>
-		<p class="lead"><%= @topic.timeframe %></p>
+		<p class="lead"><%= @topic.length %></p>
 	</div>
 </section>
 
@@ -29,13 +29,9 @@
 	</div>
 </section>
 
-<% if @topic.image.present? %>
-<h4>Image:</h4>
-<div>
-	<img src="<%= @topic.image.url%>"/>
 
 </div>
 <br>
-<% end %>
+
 
 	

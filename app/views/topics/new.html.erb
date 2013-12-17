@@ -18,16 +18,18 @@
 		<%= f.label :description, "Description" %>
 		<%= f.text_area :description, required: true %>
 		<%= f.label :starttime, "Start time" %>
-		<%= f.text_field :starttime, required: true %>
-		<%= f.label :timeframe, "Length of discussion" %>
-		<%= f.text_field :timeframe, required: true %>
-		<%= f.label :groupsize, "Group size (you can give permission to waitlisted users)" %>
-		<%= f.text_field :groupsize, required: true %>  
-		<%= f.label :image, "Pick a picture that represents your discussion topic" %>
-		<%= f.file_field :image %> 
-	</fieldset> 
-<br/><br/>
+		<%= f.datetime_select :starttime, required: true %>
+		<%= f.label :length, "Length of discussion (in minutes)" %>
+		<%= f.text_field :length, required: true %>
+		<%= f.label :groupsize, "Group size (you can give permission to users who were waitlisted an hour before the discussion)" %>
+		<%= f.text_field :groupsize, required: true %> 
 
-<%= f.submit class: "btn btn-succes btn-medium" %>
-<%= link_to "Cancel", topics_path, class: "btn btn-danger btn-medium" %>
-<% end %>
+		</fieldset> 
+		<br/><br/>
+
+		<%= f.submit class: "btn btn-succes btn-medium" %>
+		<%= link_to "Cancel", topics_path, class: "btn btn-danger btn-medium" %>
+		<% end %>
+
+ 
+		

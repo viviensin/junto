@@ -1,6 +1,11 @@
 <section>
-	<h2>Discussion questions</h2>
+	<h2>Discussion topics</h2>
 
-<br/>
 
-<% @
+  <% @topic.each do |topic| %>
+  <article>
+         <li><a href="<%= topic_path(topic) %>"><%= truncate topic.question %> - <%= topic.length %>minutes</a></li>
+  </article>
+   
+  <% end %>
+       

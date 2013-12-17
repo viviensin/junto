@@ -8,6 +8,12 @@
 </head>
 <body>
 
+<div style= "float: right;">
+  <% if user_signed_in? %>
+    Hi, <%= current_user.email %>
+  <% end %>
+</div>
+
 <div class="navbar">
 	<div class="navbar-inner">
 	<div class="container">
@@ -22,17 +28,22 @@
         <li><%= link_to "Browse Discussion Topics", topics_path %></li>
         <li><%= link_to "Post Discussion Topics", new_topic_path %></li>
       </ul>
-      <ul class="nav pull-right">
-        <% if user_signed_in? %>
-        <li><%= link_to "Sign out", destroy user_session_path, method: :delete %></li>
-        <% else %>
-        <li><%= link_to "Sign in", new_user_session_path %></li>
-        <% end %>
-      </ul>
+       <ul class="nav pull-right">   
+       <% if user_signed_in? %>   
+       <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>    
+           
+      <% else %>   
+      <li><%= link_to "Sign in", new_user_session_path %></li>    
+      <% end %>
+       </ul>  
     </div>
   </div>
 </div>
 </div>
+
+
+
+
 
     <div class="container">
       <div class="row">
@@ -53,6 +64,7 @@
       </div><!--/row-->
 
     </div> <!-- /container -->
+
 
     <!-- Javascripts
     ================================================== -->
