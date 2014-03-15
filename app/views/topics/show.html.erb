@@ -1,0 +1,34 @@
+<u1 class="breadcrumb">
+	<li><a href="<%= topics_path %>">All</a><span class="divider">/</span></li>
+</u1>
+
+<h1><%= @topic.question %> - Starts at <%= @topic.starttime %></h1>
+
+<br/>
+<%= mail_to @topic.user.email, "Contact Facilitator", subject: "Junto - #{@topic.question}", class: "btn btn-primary" %></h4>
+<h4>Facilitator: <%= @topic.user.email %></h4>
+
+<h4>Description:</h4>
+<section class="well well-small">
+	<div>
+		<p class="lead"><%= @topic.description %></p>
+	</div>
+</section>
+
+<h4>Length of discussion:</h4>
+<section class="well well-small">
+	<div>
+		<p class="lead"><%= @topic.length %></p>
+	</div>
+</section>
+
+<h4>Group size:</h4>
+<section class="well well-small">
+	<div>
+		<p class="lead"><%= @topic.groupsize %></p>
+	</div>
+</section>
+
+
+
+	
