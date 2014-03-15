@@ -1,13 +1,15 @@
-<u1 class="breadcrumb">
+<link href='http://fonts.googleapis.com/css?family=Josefin+Slab|Radley|Volkhov' rel='stylesheet' type='text/css'>
+
+<body>
+<!-- <u1 class="breadcrumb">
 	<li><a href="<%= topics_path %>">All</a><span class="divider">/</span></li>
-</u1>
+</u1> -->
 
-<h1><%= @topic.question %> - Starts at <%= @topic.starttime %></h1>
+<h2><%= @topic.question %> </h2> <h4>Starts at <%= @topic.starttime %></h4>
 
-<br/>
-<%= mail_to @topic.user.email, "Contact Facilitator", subject: "Junto - #{@topic.question}", class: "btn btn-primary" %></h4>
 <h4>Facilitator: <%= @topic.user.email %></h4>
-
+<%= mail_to @topic.user.email, "Contact Facilitator", subject: "Junto - #{@topic.question}", class: "show contact-facilitator" %></h4>
+<br><br/>
 <h4>Description:</h4>
 <section class="well well-small">
 	<div>
@@ -29,6 +31,10 @@
 	</div>
 </section>
 
+<%= link_to "Edit Topic", edit_topic_path(@topic), class: "show edit-button", :method => :edit %>
+<%= link_to "Delete Topic", topic_path(@topic), class: "show delete-button", :method => :delete %>
 
+<br></br>
+</body>
 
 	

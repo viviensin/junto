@@ -1,17 +1,19 @@
-<h1>Welcome to Junto</h1>
+<head>
+	<link href='http://fonts.googleapis.com/css?family=Josefin+Slab|Radley|Volkhov' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Montez|Molle:400italic|The+Girl+Next+Door|Arizonia|Nothing+You+Could+Do' rel='stylesheet' type='text/css'>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+	<script type="text/javascript" charset="utf-8" src="vendor/assets/javascripts/jquery.tubular.1.0.js"></script>
+</head>
+
+<body>
+<h1 style="text-align:center;">Junto</h1> 
+<br></br>
+<h3 style="text-align:center;">Timed, themed, facilitated discussions for intellectual growth</h3>
 
 <section class="hero-unit">
-  <h1 style="text-align:center;">Come join or host an intellectual discussion!</h1>
+  <h2 style="text-align:center;">Come join or host a discussion!</h2>
+   	<p class ="text-center"> <%= link_to "Browse Discussion Topics", topics_path, class: 'welcome-button browse' %></p>
+	<p class ="text-center"><%= link_to "Sign In & Create a topic", new_topic_path, class: 'welcome-button signup' %></p>
 
-  <br/>
-
-  <div class='action-buttons'>
-
-   <p class ="text-center"> <%= link_to "Browse Discussion Topics", topics_path, class: 'btn btn-info btn-large' %></p>
-
-    
-    <p class ="text-center"><%= link_to "Sign In & Create a topic", new_topic_path, class: 'btn btn-inverse btn-large' %></p>
-
-
-  </div>
 </section>
+</body>

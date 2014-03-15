@@ -1,4 +1,10 @@
-<h1> New Discussion Topic </h1>
+<link href='http://fonts.googleapis.com/css?family=Josefin+Slab|Radley|Volkhov' rel='stylesheet' type='text/css'>
+
+<link rel="stylesheet" href="reveal.css">
+<script src="jquery.min.js" type="text/javascript"></script>
+<script src="jquery.reveal.js" type="text/javascript"></script>
+<body>
+<h2> New Discussion Topic </h2>
 
 <br/>
 
@@ -11,6 +17,7 @@
 	</ul>
 <% end %>
 
+<div id="myModal" class = "reveal-modal">
 <%= form_for @topic do |f| %>
 	<fieldset>
 		<%= f.label :question, "Discussion topic (we recommend that you put it in the form of a question)" %>
@@ -21,7 +28,7 @@
 		<%= f.datetime_select :starttime, required: true %>
 		<%= f.label :length, "Length of discussion (in minutes)" %>
 		<%= f.text_field :length, required: true %>
-		<%= f.label :groupsize, "Group size (you can give permission to users who were waitlisted an hour before the discussion)" %>
+		<%= f.label :groupsize, "Group size (you can give permission to users who are waitlisted an hour before the discussion)" %>
 		<%= f.text_field :groupsize, required: true %> 
 
 		</fieldset> 
@@ -30,6 +37,7 @@
 		<%= f.submit class: "btn btn-succes btn-medium" %>
 		<%= link_to "Cancel", topics_path, class: "btn btn-danger btn-medium" %>
 		<% end %>
-
+</div>
+</body>
  
 		
