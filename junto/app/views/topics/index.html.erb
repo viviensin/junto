@@ -1,11 +1,69 @@
-<section>
+<!-- <section>
+
 	<h2>Discussion topics</h2>
 
+		  <% @topic.each do |topic| %>
+		  <article>
+		         <li><a href="<%= topic_path(topic) %>"><%= truncate topic.question %> - <%= topic.length %>minutes</a></li>
+		  </article>
+		   
+		  <% end %> -->
 
-  <% @topic.each do |topic| %>
-  <article>
-         <li><a href="<%= topic_path(topic) %>"><%= truncate topic.question %> - <%= topic.length %>minutes</a></li>
-  </article>
-   
-  <% end %>
-       
+<link href='http://fonts.googleapis.com/css?family=Josefin+Slab|Radley|Volkhov' rel='stylesheet' type='text/css'>
+<body>
+<h2> Discussion topics </h2>
+<div class="container">
+	<div class="row">
+		<% @topic.each do |topic| %>
+			<div class="span4">
+				<div class="thumbnail">
+					<img data-src="holder.js/300x200" alt="">
+
+					<div class="caption">
+
+						<a href="<%= topic_path(topic) %>"><%=topic.question %> <!-- - <%= topic.length %>minutes --></a>
+				<br></br>
+				<button class="btn btn-info" data-toggle="modal" data-target="#myModal">
+				  Join
+				</button>
+				<!-- Modal -->
+				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				  <div class="modal-dialog">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				        <h4 class="modal-title" id="myModalLabel">Thank you!</h4>
+				      </div>
+				      <div class="modal-body">
+				      You've successfuly signed up for this discussion.  
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				<a href="#" class="btn btn-secondary btn-lg" data-toggle="modal" data-target="#myModal_learn" role="button">Learn more</a></p>
+				<div class="modal fade" id="myModal_learn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				  <div class="modal-dialog">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				        <h4 class="modal-title" id="myModalLabel">Get excited!</h4>
+				      </div>
+				      <div class="modal-body">
+				      Here are the recommended readings for the discussion.
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+					</div>
+				</div>
+			</div>
+		<% end %>
+	</div>
+</div>
+</body>

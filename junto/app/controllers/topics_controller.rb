@@ -21,9 +21,27 @@
 		end
 	end
 
-	def show
-		@topic = Topic.find params[:id]
+	def edit
+		@topic = Topic.find(params[:id])
 	end
 
-	
+	def update
+		if @topic.update(safe_topic)
+			redirect_to @topic
+		else
+			render :edit
+		end
+	end
+
+	def show
+		@topic = Topic.find(params[:id])
+	end
+
+	def destroy
+    @topic = Topic.find(params[:id])
+    @topic.destroy
+    redirect_to root_path
+	end
+
 end
+

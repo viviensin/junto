@@ -1,0 +1,66 @@
+//this is the pseudo code for the front-end of my junto app 
+//junto is a platform for people to have timed, themed, faciliated intellectual discussions (i.e. chat boxes with a bunch of gimmicks)
+//main functionality: sliding boxes and caption (by default the boxes will show discussion topic and time, when hovered, it'll show details, and users have the option to "sign up for discussion")
+
+//html will have something like:
+<div class="topicbox"></div>
+<div class="boxbg"></div>
+<div class="boxcaption"></div>
+<div class="join"></div>
+
+//pseudo code for the CSS:
+
+//CSS for default topic box, when the mouse hasn't hovered on it
+.topicbox{
+    width: 350px;
+    height: 250px;
+    margin: 8px;
+    float:left;
+    background:#111111;
+    border: solid 2px #8399AF;
+}
+
+
+.boxbg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 0;
+}
+
+.boxcaption{
+    float: left;
+    position: absolute;
+    background: #000;
+    height: 100px;
+    width: 100%;
+    opacity: .8;
+
+.join {
+    position:absolute;
+    float: left;
+    height: 10px;
+    width: 20px;
+}
+
+ //adding the sliding animation. logic: event trigger will be "hover", when the event is triggered, .boxgrid and .boxcaption should occur. 
+
+$('.topicbox').hover(
+  function() {
+    $('.topicbox').fadeOut(100); <-- or opacicty: '1'?
+    this line should trigger .boxbg and .boxcaption
+    this line should trigger .join 
+    })
+
+#('.join').click(
+    function() {
+        this function should save the user_id to the discussion topic in the model 
+    })
+
+
+ 
+//Challenge I anticipate:
+//the topicbox is not an image in that it consists of information other users have submitted. so I need to wrap them up and call it topicbox
+//the basic backend of this has been built with rails, but I have no experience combining these with rails, so that'd take some time figuring out. 
+
+
